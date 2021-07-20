@@ -1,3 +1,4 @@
+//index to start count at the beggining of the time block
 var hourText = 9;
 
 //var for todays date
@@ -11,47 +12,31 @@ var newTime = parseInt(timeHour)
 console.log(newTime);
 console.log(typeof newTime);
 
-var timeSet = $("#timeSet").text().trim();
-console.log(timeSet);
+var time = $("#timeSet");
+var timeSet = $(".description")
 
-// for(var i=0; i<9; i++){
-//     // console.log(index)
-//     // console.log(typeof index)
-//     if(newTime<index){
-//         $("#comment").addClass("past")
-        
-//     };
-//     if(newTime>index){
-//         $("#comment").addClass("future")
-        
-//     };
-//     index++;
+//for .each it has to be a class that is selected 
+$(timeSet).each(function(){
 
-// }
+    //conditional statement to change and add classes 
+    if(hourText<newTime){
+        $(this).removeClass("future")  
+        $(this).removeClass("present")  
+        $(this).addClass("past")  
+    };
+    if(hourText>newTime){
+        $(this).removeClass("present")  
+        $(this).removeClass("past")  
+        $(this).addClass("future")  
+    };
+    if(hourText === newTime) {
+        $(this).removeClass("future")
+        $(this).removeClass("past")
+        $(this).addClass("present")
+    };
+    
 
-// if(14>newTime){
-//     $("#comment").removeClass("past")  
-//     $("#comment").removeClass("present")  
-//     $("#comment").addClass("future")  
-// };
+hourText++;
+console.log($(this));
 
-// if(9<newTime){
-//     $("#comment").removeClass("future")  
-//     $("#comment").removeClass("present")  
-//     $("#comment").addClass("past")  
-// };
-
-var content = document.querySelector("#text");
-console.log(typeof content);
-
-
-    $("#text").each(function(hourText,element){
-
-        if(hourText<newTime){
-            $("#comment").removeClass("future")  
-            $("#comment").removeClass("present")  
-            $("#comment").addClass("past")  
-        }
-    console.log(element);
-    console.log(hourText)
-    });
+});
