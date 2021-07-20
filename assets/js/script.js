@@ -1,4 +1,4 @@
-var index = 9;
+var hourText = 9;
 
 //var for todays date
 var todaysDate = moment().toDate()
@@ -6,8 +6,6 @@ var todaysDate = moment().toDate()
 $("#currentDay").append(todaysDate);
 
 var timeHour = moment().format('HH');
-console.log(timeHour);
-console.log(typeof timeHour);
 //convert time from str to int/number
 var newTime = parseInt(timeHour)
 console.log(newTime);
@@ -30,3 +28,30 @@ console.log(timeSet);
 //     index++;
 
 // }
+
+// if(14>newTime){
+//     $("#comment").removeClass("past")  
+//     $("#comment").removeClass("present")  
+//     $("#comment").addClass("future")  
+// };
+
+// if(9<newTime){
+//     $("#comment").removeClass("future")  
+//     $("#comment").removeClass("present")  
+//     $("#comment").addClass("past")  
+// };
+
+var content = document.querySelector("#text");
+console.log(typeof content);
+
+
+    $("#text").each(function(hourText,element){
+
+        if(hourText<newTime){
+            $("#comment").removeClass("future")  
+            $("#comment").removeClass("present")  
+            $("#comment").addClass("past")  
+        }
+    console.log(element);
+    console.log(hourText)
+    });
