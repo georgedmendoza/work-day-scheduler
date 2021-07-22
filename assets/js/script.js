@@ -51,7 +51,7 @@ var saveTasks = function(textValue) {
 var loadTasks = function() {
 /*save and load each task/comment.textContent its designated location by using unique Ids
     document.getElementById("9").textContent = localStorage.getItem("9");
-    document.getElementById("10").textContent = localStorage.getItem("10");
+    document.getElementById("10").textContegit ===nt = localStorage.getItem("10");
     document.getElementById("11").textContent = localStorage.getItem("11");
     document.getElementById("12").textContent = localStorage.getItem("12");
     document.getElementById("13").textContent = localStorage.getItem("13");
